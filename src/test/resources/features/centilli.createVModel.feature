@@ -1,8 +1,17 @@
-Feature: User should be able to login to home page
+Feature: User should be able to login to Centrilli
 
-  Scenario: To be logged in Centrilli home page
-    Given user is on the login page
-    When user enters "posmanager10@info.com" to the email box
-    And user enters posmanager to the password box
-    And user clicks to the login button
-    Then user is on the Centrilli page
+  Background: : User is expected to be logged as Posmanager
+
+     Given user is on the login page
+     When user enters email enter password and login
+     And user clicks more icon
+     And user clicks fleet icon
+     And user clicks vehicle model button
+     Then user is on the vehicle create page
+
+      Scenario: User create a vehicle model
+        When user clicks create button
+        And user write fairy to Model name
+        And user
+
+

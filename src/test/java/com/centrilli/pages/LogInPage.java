@@ -20,4 +20,13 @@ public WebElement PasswordBox;
 @FindBy(xpath="//button[.='Log in']")
 public WebElement LogInButton;
 
+    @FindBy(id="menu_more_container")
+    public WebElement MoreIcon;
+
+
+    @FindBy(xpath="//a[@data-menu='134']")
+    public WebElement FleetIcon;
+
+    @FindBy(xpath="//a[@data-menu='136']")
+    public WebElement VehicleModel;
 }

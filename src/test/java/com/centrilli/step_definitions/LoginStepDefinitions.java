@@ -18,28 +18,45 @@ public class LoginStepDefinitions {
         Driver.getDriver().get("https://qa.centrilli.com/web/login");
 
     }
-    @When("user enters {string} to the email box")
-    public void userEntersToTheEmailBox(String arg0) {
+
+    @When("user enters email enter password and login")
+    public void userEntersEmailEnterPasswordAndLogin() {
         logInPage.EmailBox.sendKeys("posmanager10@info.com");
-    }
-
-    @And("user enters posmanager to the password box")
-    public void userEntersPosmanagerToThePasswordBox() {
         logInPage.PasswordBox.sendKeys("posmanager");
-    }
-
-    @And("user clicks to the login button")
-    public void userClicksToTheLoginButton() {
         logInPage.LogInButton.click();
+
     }
 
     @Then("user is on the Centrilli page")
     public void userIsOnTheCentrilliPage() throws InterruptedException {
   Thread.sleep(5000);
         System.out.println(Driver.getDriver().getTitle());
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("https://qa.centrilli.com/web?#menu_id=115&action=120&active_id=channel_inbox"));
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("#Inbox - Odoo"));
+    }
+
+    @And("user clicks more icon")
+    public void userClicksMoreIcon() throws InterruptedException {
+        Thread.sleep(5000);
+        logInPage.MoreIcon.click();
+    }
+
+    @And("user clicks fleet icon")
+    public void userClicksFleetIcon() throws InterruptedException {
+        Thread.sleep(5000);
+        logInPage.FleetIcon.click();
     }
 
 
 
+    @Then("user clicks vehicle model button")
+    public void userClicksVehicleModelButton() throws InterruptedException {
+        Thread.sleep(5000);
+        logInPage.VehicleModel.click();
+    }
+
+
+    @Then("user is on the vehicle create page")
+    public void userIsOnTheVehicleCreatePage() {
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://qa.centrilli.com/web#view_type=list&model=fleet.vehicle.model&menu_id=136&action=153"));
+    }
 }
