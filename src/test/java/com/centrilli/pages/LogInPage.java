@@ -29,4 +29,12 @@ public WebElement LogInButton;
 
     @FindBy(xpath="//a[@data-menu='136']")
     public WebElement VehicleModel;
+
+
+
+
+
+
+
+
 }

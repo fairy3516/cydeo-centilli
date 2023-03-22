@@ -11,7 +11,11 @@ Feature: User should be able to login to Centrilli
 
       Scenario: User create a vehicle model
         When user clicks create button
-        And user write fairy to Model name
-        And user
+        And user write Artun to Model name field
+        And user clicks Make field and write Artun
+        And user clicks save button
+        And user clicks create and edit button
+        And user clicks Save1 button
+        Then user clicks save button
 
 

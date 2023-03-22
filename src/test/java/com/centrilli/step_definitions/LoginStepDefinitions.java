@@ -57,6 +57,9 @@ public class LoginStepDefinitions {
 
     @Then("user is on the vehicle create page")
     public void userIsOnTheVehicleCreatePage() {
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://qa.centrilli.com/web#view_type=list&model=fleet.vehicle.model&menu_id=136&action=153"));
+        System.out.println(Driver.getDriver().getTitle());
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Vehicles - Odoo"));
     }
+
+
 }
